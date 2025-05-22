@@ -1,0 +1,13 @@
+.registration-container {
+  padding: 20px;
+  background-color: #2a2a2a; /* A slightly lighter dark background for the form container */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 20px auto; /* Center the container */
+}
+
+h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}

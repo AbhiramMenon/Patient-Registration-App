@@ -1,2 +1,6 @@
-<h1>Register Patient</h1>
-<p>This is the patient registration form area.</p>
+<div class="registration-container">
+  <h2>Patient Registration</h2>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <button mat-raised-button color="primary" type="submit">Register</button>
+  </form>
+</div>
