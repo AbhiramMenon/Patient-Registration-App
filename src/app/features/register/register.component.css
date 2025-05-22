@@ -1,13 +1,165 @@
 .registration-container {
-  padding: 20px;
-  background-color: #2a2a2a; /* A slightly lighter dark background for the form container */
+  padding: 30px;
+  background-color: #2a2a2a;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  margin: 20px auto; /* Center the container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 650px;
+  margin: 30px auto;
+  color: #ffffff; /* General text color for the container */
 }
 
 h2 {
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Material Form Field Specific Styles for Dark Theme */
+:host ::ng-deep .mat-form-field-wrapper {
+  background-color: #333333 !important;
+  border-radius: 4px;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+:host ::ng-deep .mat-form-field-label {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--mat-form-field-focus-label-text-color, #42a5f5) !important;
+}
+
+:host ::ng-deep .mat-input-element {
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .mat-form-field-underline {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-underline {
+    background-color: var(--mat-form-field-focus-label-text-color, #42a5f5) !important;
+}
+
+
+:host ::ng-deep .mat-datepicker-toggle-default-icon {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.gender-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gender-section mat-label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #ffffff !important; /* <--- CHANGE THIS LINE TO PURE WHITE */
+}
+mat-radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+/* Specific Material Radio Button styling for dark theme */
+:host ::ng-deep .mat-radio-button.mat-accent .mat-radio-outer-circle {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+:host ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--mat-radio-checked-ripple-color, #42a5f5) !important;
+}
+
+:host ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: var(--mat-radio-checked-ripple-color, #42a5f5) !important;
+}
+
+/* IMPORTANT: Ensure radio button label content is white */
+:host ::ng-deep .mat-radio-label-content {
+  color: #ffffff !important;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 18px;
+  align-self: center;
+  /* Styles for the black button with white text */
+  background-color: #000000 !important; /* Black background */
+  color: #ffffff !important; /* White text */
+  border: 1px solid #333333; /* Subtle border for definition */
+}
+
+/* Hover/Focus states for the black button */
+.submit-button:hover {
+  background-color: #1a1a1a !important; /* Slightly lighter black on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) !important;
+}
+.submit-button:active {
+  background-color: #0d0d0d !important; /* Slightly darker on active */
+}
+
+
+/* For error messages */
+mat-error {
+  font-size: 12px;
+  color: #ff6e6e !important;
+  margin-top: 5px;
+}
+
+/* Ensure all text within the form (even non-material specific) is white */
+.registration-container * {
+    color: #ffffff;
+}
+
+/* Override for specific Material elements that might have default dark text */
+:host ::ng-deep .mat-calendar-body-cell-content {
+    color: #ffffff; /* Text inside calendar day cells */
+}
+
+:host ::ng-deep .mat-calendar-table-header th {
+    color: rgba(255, 255, 255, 0.7); /* Days of week in calendar */
+}
+
+:host ::ng-deep .mat-calendar-period-button {
+    color: #ffffff; /* Month/Year selector in calendar header */
+}
+
+:host ::ng-deep .mat-calendar-arrow {
+    color: #ffffff; /* Arrows in calendar header */
+}
+
+:host ::ng-deep .mat-calendar-next-button,
+:host ::ng-deep .mat-calendar-previous-button {
+    color: #ffffff; /* Next/Previous buttons in calendar */
+}
+
+:host ::ng-deep .mat-datepicker-content .mat-calendar-table-header {
+    color: rgba(255, 255, 255, 0.7); /* Header for datepicker body */
+}
+
+:host ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: #ff6e6e !important; /* Error label color */
+}
+
+:host ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: #ff6e6e !important; /* Error outline color */
 }

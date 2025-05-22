@@ -1,6 +1,47 @@
 <div class="registration-container">
   <h2>Patient Registration</h2>
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <button mat-raised-button color="primary" type="submit">Register</button>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="fullName" placeholder="e.g. John Doe">
+      <mat-error *ngIf="registrationForm.get('fullName')?.hasError('required') && registrationForm.get('fullName')?.touched">
+        Full Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" placeholder="MM/DD/YYYY">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="registrationForm.get('dateOfBirth')?.hasError('required') && registrationForm.get('dateOfBirth')?.touched">
+        Date of Birth is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contact Number</mat-label>
+      <input matInput type="tel" formControlName="contactNumber" placeholder="e.g. +1234567890">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Address</mat-label>
+      <textarea matInput formControlName="address" placeholder="Street, City, State, Zip"></textarea>
+    </mat-form-field>
+
+    <div class="gender-section">
+      <mat-label>Gender:</mat-label>
+      <mat-radio-group aria-label="Select gender" formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="other">Other</mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="registrationForm.get('gender')?.hasError('required') && registrationForm.get('gender')?.touched">
+        Gender is required.
+      </mat-error>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" class="submit-button">Register</button>
   </form>
 </div>
