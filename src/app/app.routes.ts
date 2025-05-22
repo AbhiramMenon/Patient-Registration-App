@@ -1,12 +1,21 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component'; // AppComponent is now standalone by default
+import { LayoutComponent } from './shared/layout/layout.component';
+import { RegisterComponent } from './features/register/register.component'; // Import feature components
+import { QueryComponent } from './features/query/query.component';
+import { AboutComponent } from './features/about/about.component';
+
 
 export const routes: Routes = [
-  // Redirect to /register by default
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
-  { path: 'register', component: AppComponent }, // Placeholder for RegisterComponent
-  { path: 'query', component: AppComponent },    // Placeholder for QueryComponent
-  { path: 'about', component: AppComponent },    // Placeholder for AboutComponent
-  // Wildcard route for any other path, redirect to register
-  { path: '**', redirectTo: '/register' }
+  { path: '', redirectTo: '/register', pathMatch: 'full' }, // Redirect root to /register
+  {
+    path: '', // This empty path means this route serves as a layout wrapper
+    component: LayoutComponent, // The LayoutComponent is loaded here
+    children: [
+      // These children routes will be rendered INSIDE the <router-outlet> of LayoutComponent
+      { path: 'register', component: RegisterComponent }, // Use actual components
+      { path: 'query', component: QueryComponent },
+      { path: 'about', component: AboutComponent },
+    ]
+  },
+  { path: '**', redirectTo: '/register' } // Wildcard route for unmatched paths
 ];

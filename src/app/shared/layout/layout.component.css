@@ -1,0 +1,51 @@
+.app-toolbar {
+  height: 64px; /* Default Angular Material toolbar height */
+  display: flex;
+  align-items: center;
+  padding: 0 16px; /* Default padding */
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 16px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto; /* Pushes content to the right */
+}
+
+.app-sidenav-container {
+  height: calc(100vh - 64px); /* Full viewport height minus toolbar height */
+  display: flex; /* Ensure container uses flexbox for content distribution */
+}
+
+.app-sidenav {
+  width: 250px; /* Fixed width for the sidebar */
+  min-width: 250px;
+  max-width: 250px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12); /* Subtle separator */
+  box-shadow: 2px 0 3px -1px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12); /* Shadow for depth */
+}
+
+.app-sidenav-content {
+  flex: 1; /* Take up remaining space */
+  padding: 20px; /* Padding for the main content area */
+  background-color: #1a1a1a; /* Slightly lighter dark background for content */
+  color: #ffffff; /* Text color for content area */
+  overflow: auto; /* Enable scrolling for content if it overflows */
+}
+
+.content-wrapper {
+  max-width: 1200px; /* Max width for content for better readability */
+  margin: 0 auto; /* Center the content wrapper */
+}
+
+/* Style for active router link */
+.mat-list-item.active {
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle highlight for active link */
+  color: var(--mat-sidenav-content-text-color, #ffffff); /* Ensure text color remains readable */
+}
+.mat-list-item.active .mat-icon {
+  color: var(--mat-sidenav-content-text-color, #ffffff);
+}
