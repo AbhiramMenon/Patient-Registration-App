@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; /* Keep Angular Material's default font */
+  background-color: #121212; /* A dark grey for the overall app background */
+  color: #ffffff; /* Default text color for dark themes */
+}
